@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <h2>GhostDetailSection</h2>
+  <div class="ghost-detail-section">
     <template v-if=ghost>
-      <h5>{{ghost.gene}}</h5>
-      <h5>{{ghost.name}}</h5>
-      <h5>{{ghost.level}}</h5>
-      <h5>{{ghost.angelPoint}}</h5>
-      <h5>{{ghost.evilPoint}}</h5>
+      <span>{{ghost.gene}}</span>
+      <span>{{ghost.name}}</span>
+      <span>{{ghost.level}}</span>
+      <span>{{ghost.angelPoint}}</span>
+      <span>{{ghost.evilPoint}}</span>
     </template>
   </div>
 </template>
@@ -20,3 +19,10 @@ export default class GhostDetailSection extends Vue {
   @Prop() private ghost?: Ghost;
 }
 </script>
+
+<style scoped lang="scss">
+.ghost-detail-section {
+  height: 386px;
+  background-image: url('~@/assets/ghost-detail-section-background.png')
+}
+</style>
