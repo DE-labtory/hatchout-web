@@ -10,7 +10,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 
 @Component
 export default class RadioBullet extends Vue {
-  @Prop() private isActive: boolean;
+  @Prop() private isActive!: boolean;
   constructor() {
     super();
   }

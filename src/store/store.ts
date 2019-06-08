@@ -7,8 +7,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     myGhosts: [
-      {gene: '123', evilPoint: 90, angelPoint: 80, name: 'ghost', level: 2},
-      {gene: '125', evilPoint: 90, angelPoint: 80, name: 'ghost2', level: 2},
+      {gene: 'token ID', evilPoint: 90, angelPoint: 80, name: 'Token Name', level: 2},
+      {gene: 'token ID2', evilPoint: 90, angelPoint: 80, name: 'Token Name2', level: 2},
     ] as Ghost[],
   },
   mutations: {},

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>This is an collection view</h1>
     <TokenDetailSection v-bind:ghost="selectedGhost"></TokenDetailSection>
     <TokenListSection v-bind:ghosts="ghosts"></TokenListSection>
   </div>
@@ -8,8 +7,8 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import TokenDetailSection from '@/components/section/GhostDetailSection.vue';
-import TokenListSection from '@/components/section/GhostListSection.vue';
+import TokenDetailSection from '@/components/sections/GhostDetailSection.vue';
+import TokenListSection from '@/components/sections/GhostListSection.vue';
 import {Ghost} from '@/types';
 
 @Component({
