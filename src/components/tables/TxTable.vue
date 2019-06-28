@@ -2,27 +2,13 @@
     <table class="tx-table">
         <thead class="tx-table-head">
         <tr class="tx-head">
-            <th class="tx-head-time">
-                {{Time}}
-            </th>
-            <th class="tx-head-hash">
-                {{Hash}}
-            </th>
-            <th class="tx-head-from">
-                {{From}}
-            </th>
-            <th class="tx-head-to">
-                {{To}}
-            </th>
-            <th class="tx-head-purpose">
-                {{Purpose}}
-            </th>
-            <th class="tx-head-txfee">
-                {{TxFee}}
-            </th>
-            <th class="tx-head-status">
-                {{Status}}
-            </th>
+            <th class="tx-head-time">Time</th>
+            <th class="tx-head-hash">Hash</th>
+            <th class="tx-head-from">From</th>
+            <th class="tx-head-to">To</th>
+            <th class="tx-head-purpose">Purpose</th>
+            <th class="tx-head-txfee">TxFee (eth/eos)</th>
+            <th class="tx-head-status">Status</th>
         </tr>
         </thead>
         <tbody class="tx-table-body">
@@ -86,17 +72,12 @@
     }
 
     .tx-head-time {
-        width: 125px;
-        height: 18px;
-        font-family: Ubuntu;
-        font-size: 16px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.3px;
-        text-align: center;
-        color: #ffffff;
+        width: 152px;
+        height: 48px;
+        opacity: 0.2;
+        border-radius: 28px;
+        border: solid 1px #ffffff;
+        background-color: #ffffff;
     }
 
     .tx-head-hash {

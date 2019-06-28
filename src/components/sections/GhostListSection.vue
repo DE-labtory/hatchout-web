@@ -3,17 +3,23 @@
     <div class="ghost-filter-section">
       <div class="sort-method-item" @click="activeSortMethod = 'byTime'"
            v-bind:class="{active: activeSortMethod ==='byTime' }">
-        <RadioBullet v-bind:isActive="activeSortMethod ==='byTime'"></RadioBullet>
+        <RadioBullet v-bind:isActive="activeSortMethod ==='byTime'"
+                     v-bind:activeColor="'#a05acb'"
+                     v-bind:inactiveColor="'#9f9f9f'"></RadioBullet>
         <div>획득 시간 순서</div>
       </div>
       <div class="sort-method-item" @click="activeSortMethod = 'byGoodness'"
            v-bind:class="{active: activeSortMethod === 'byGoodness' }">
-        <RadioBullet v-bind:isActive="activeSortMethod ==='byGoodness'"></RadioBullet>
+        <RadioBullet v-bind:isActive="activeSortMethod ==='byGoodness'"
+                     v-bind:activeColor="'#a05acb'"
+                     v-bind:inactiveColor="'#9f9f9f'"></RadioBullet>
         <div>선한 점수 순서</div>
       </div>
       <div class="sort-method-item" @click="activeSortMethod ='byEvilness'"
            v-bind:class="{active: activeSortMethod === 'byEvilness' }">
-        <RadioBullet v-bind:isActive="activeSortMethod ==='byEvilness'"></RadioBullet>
+        <RadioBullet v-bind:isActive="activeSortMethod ==='byEvilness'"
+                     v-bind:activeColor="'#a05acb'"
+                     v-bind:inactiveColor="'#9f9f9f'"></RadioBullet>
         <div>악한 점수 순서</div>
       </div>
     </div>
