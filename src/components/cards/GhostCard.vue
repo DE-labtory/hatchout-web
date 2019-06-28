@@ -37,14 +37,6 @@ export default class GhostCard extends Vue {
     justify-content: center;
   }
 
-  .ghost-image {
-    border-radius: 20px;
-    width: 120px;
-    height: 114px;
-    border: solid 1px #ecceff;
-    background-color: #7d4dbd;
-  }
-
   img {
     max-width: 100%;
     max-height: 100%;
