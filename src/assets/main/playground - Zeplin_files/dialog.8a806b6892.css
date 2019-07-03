@@ -1,0 +1,160 @@
+dialog {
+    width: 400px;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 24px 24px 0;
+    background-color: #fff;
+    border: none;
+    text-align: left;
+    word-wrap: break-word;
+    box-shadow: 0 1px 4px 0 rgba(188, 181, 185, 0.5);
+    box-shadow: 0 1px 4px 0 var(--warm-gray-50pc);
+}
+
+dialog::backdrop {
+    background-color: var(--teflon-70pc, rgba(85, 77, 86, 0.7));
+}
+
+dialog + .backdrop {
+    background-color: var(--teflon-70pc);
+}
+
+._dialog_overlay {
+    background: transparent;
+}
+
+dialog .icon:empty,
+dialog .title:empty,
+dialog form button:empty,
+dialog .message:empty,
+dialog .iconContainer:empty {
+    display: none;
+}
+
+dialog .iconContainer {
+    display: flex;
+    height: 36px;
+    margin: 0 0 24px 0;
+}
+
+dialog .iconContainer img {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+}
+
+dialog .title {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--teflon);
+}
+
+dialog h2 {
+    margin-bottom: 16px;
+    line-height: 19px;
+    font-size: 16px;
+    color: var(--gandalf);
+}
+
+dialog .message {
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: var(--gandalf);
+
+}
+
+dialog .title:empty + .message {
+    color: var(--teflon);
+}
+
+dialog .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 0;
+}
+
+dialog .inputWrapper {
+    padding: 16px 0 12px;
+}
+
+dialog input {
+    font-size: 16px;
+}
+
+dialog .inputLabel {
+    top: 11px;
+    font-size: 16px;
+}
+
+dialog .inputArea.focus .inputLabel {
+    color: var(--yellow);
+}
+
+dialog .inputArea.typed .inputLabel {
+    opacity: 1;
+    transform: translateY(-26px) scale(0.875);
+}
+
+dialog .inputArea.focus .inputUnderline {
+    background-color: var(--yellow);
+}
+
+dialog form {
+    width: 100%;
+    max-width: initial;
+}
+
+dialog form button {
+    position: relative;
+    min-width: 72px;
+    width: auto;
+    height: 36px;
+    margin: 0;
+    padding: 9px 8px 8px;
+    background-color: #fff;
+    line-height: 19px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+}
+
+dialog form button:hover {
+    box-shadow: 0 2px 6px 0 var(--teflon-20pc);
+}
+
+dialog form button.done {
+    color: var(--cornflower-blue);
+}
+
+dialog form button.done:active {
+    background-color: var(--cornflower-blue-15pc);
+}
+
+dialog form button.cancel {
+    color: var(--gandalf);
+}
+
+dialog form button.cancel:active {
+    background-color: var(--gandalf-30pc);
+}
+
+dialog form button:not(:last-child) {
+    margin-right: 8px;
+}
+
+dialog form button:disabled {
+    background-color: #fff;
+    color: rgba(188, 181, 185, 0.6);
+    color: var(--warm-gray-60pc);
+}
+
+dialog form button:disabled:hover {
+    box-shadow: none;
+}
+
+dialog .inputContainer {
+    margin: 16px 0 0 0;
+}

@@ -1,0 +1,38 @@
+.zplTooltip {
+    position: fixed;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    transform: translateX(-50%);
+    max-width: 360px;
+    padding: 8px;
+    background-color: #fef7e0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 var(--teflon-50pc);
+    line-height: 16px;
+    font-size: 14px;
+    color: var(--teflon);
+    z-index: 1000;
+}
+
+.zplTooltip.overflown {
+    transform: none;
+}
+
+.zplTooltip p:nth-child(n+2) {
+    margin-top: 14px;
+}
+
+.zplTooltip img {
+    height: 16px;
+    vertical-align: bottom;
+}
+
+.zplTooltip a {
+    color: var(--green);
+}
+
+.tooltipShown {
+    visibility: visible;
+    opacity: 1;
+}

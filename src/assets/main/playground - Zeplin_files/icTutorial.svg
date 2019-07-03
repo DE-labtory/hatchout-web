@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34">
+  <defs>
+    <filter id="a" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feGaussianBlur stdDeviation="1" in="SourceGraphic"/>
+    </filter>
+    <style>circle { filter: url(#a); }</style>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="17" cy="17" r="13.5" stroke="#FECF33" fill="#FFF"/>
+    <circle cx="17" cy="17" r="9.5" stroke="#F69833"/>
+    <circle cx="17" cy="17" r="5.5" stroke="#EE6723"/>
+  </g>
+</svg>

@@ -1,15 +1,25 @@
 <template>
-    <div class="main-ranking-section"></div>
+    <div class="main-ranking-section">
+<!--        <GhostRankFirstCard v-bind:ghost="firstGhost"></GhostRankFirstCard>-->
+        <div class="ghost-rank-card-list">
+            <GhostRankCard v-bind:ghost="ghost" v-for="ghost in ghosts"></GhostRankCard>
+        </div>
+    </div>
     
 </template>
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import GhostCard from '@/components/cards/GhostCard.vue';
-
-@Component
+import {Ghost} from '@/types';
+import GhostRankFirstCard from '@/components/cards/GhostRankFirstCard.vue';
+import GhostRankCard from '@/components/cards/GhostRankCard.vue';
+@Component({
+    components: {GhostRankCard, GhostRankFirstCard},
+})
 export default class MainRankingSectionSection extends Vue {
-    @Prop() private ghosts?: GhostCard[];
+    @Prop() private firstGhost?: Ghost;
+    @Prop() private ghosts?: Ghost[];
 
 }
 </script>

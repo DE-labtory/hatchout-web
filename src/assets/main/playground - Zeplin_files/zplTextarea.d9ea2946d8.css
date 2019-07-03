@@ -1,0 +1,260 @@
+.zplTextarea {
+    padding: 10px 12px;
+    background-color: var(--whitey);
+}
+
+.zplTextarea .formattedText {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 22px;
+    font-size: 15px;
+    color: var(--teflon);
+    cursor: text;
+}
+
+.zplTextarea .formattedText .customEmoji {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+
+.zplTextarea .formattedText .emoji {
+    font-size: 22px;
+    position: relative;
+    top: 3px;
+}
+
+.zplTextarea .formattedText.jumboEmojis .customEmoji {
+    width: 32px;
+    height: 32px;
+}
+
+.zplTextarea .formattedText.jumboEmojis .emoji {
+    font-size: 32px;
+    line-height: 42px;
+    top: 5px;
+}
+
+.zplTextarea .formattedText .link {
+    color: var(--cornflower-blue);
+}
+
+.zplTextarea .formattedText:empty {
+    cursor: inherit;
+}
+
+.zplTextarea .formattedText:empty::before {
+    content: attr(data-placeholder);
+    color: #979197;
+    /* color: var(--gandalf); */
+    line-height: 18px;
+    font-size: 15px;
+}
+
+.zplTextarea .wrapper {
+    display: none;
+    position: relative;
+}
+
+.zplTextarea .mirror {
+    visibility: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    height: 100%;
+    line-height: 22px;
+    font-size: 15px;
+}
+
+.zplTextarea textarea {
+    resize: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 22px;
+    font-size: 15px;
+    color: var(--teflon);
+    background-color: transparent;
+}
+
+.zplTextarea .controls {
+    display: none;
+}
+
+.zplTextarea .controls .counter {
+    font-size: 14px;
+    color: var(--gandalf);
+}
+
+.zplTextarea .controls button {
+    width: 48px;
+    height: 20px;
+    margin-left: 6px;
+    border-radius: 10px;
+    background-color: var(--light-orange);
+}
+
+.zplTextarea.yellow .controls button {
+    background-color: var(--yellow);
+}
+
+.zplTextarea.orange .controls button {
+    background-color: var(--orange);
+}
+
+.zplTextarea.peach .controls button {
+    background-color: var(--peach);
+}
+
+.zplTextarea.green .controls button {
+    background-color: var(--green);
+}
+
+.zplTextarea.turquoise .controls button {
+    background-color: var(--turquoise);
+}
+
+.zplTextarea .controls button::before {
+    content: "Done";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.zplTextarea .controls button:hover::before {
+    content: "ctrl ⏎";
+    line-height: 21px;
+}
+
+.mac .zplTextarea .controls button:hover::before {
+    content: "⌘ ⏎";
+}
+
+.mac .zplTextarea .controls button:active::before {
+    border-radius: 10px;
+    background-color: rgba(85, 77, 86, 0.6);
+    /* background-color: var(--teflon-50pc); */
+    pointer-events: none;
+}
+
+.zplTextarea.editing {
+    padding-bottom: 6px;
+    background-color: var(--light-orange-15pc);
+}
+
+.zplTextarea.editing.yellow {
+    background-color: var(--yellow-15pc);
+}
+
+.zplTextarea.editing.orange {
+    background-color: var(--orange-15pc);
+}
+
+.zplTextarea.editing.peach {
+    background-color: var(--peach-15pc);
+}
+
+.zplTextarea.editing.green {
+    background-color: var(--green-15pc);
+}
+
+.zplTextarea.editing.turquoise {
+    background-color: var(--turquoise-15pc);
+}
+
+.zplTextarea.editing .formattedText {
+    display: none;
+}
+
+.zplTextarea.editing .wrapper {
+    display: block;
+}
+
+.zplTextarea.editing .controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.zplTextarea ::-moz-selection {
+    background-color: var(--light-orange);
+}
+
+.zplTextarea.yellow ::-moz-selection {
+    background-color: var(--yellow-99pc);
+}
+
+.zplTextarea.orange ::-moz-selection {
+    background-color: var(--orange-99pc);
+}
+
+.zplTextarea.peach ::-moz-selection {
+    background-color: var(--peach-99pc);
+}
+
+.zplTextarea.green ::-moz-selection {
+    background-color: var(--green-99pc);
+}
+
+.zplTextarea.turquoise ::-moz-selection {
+    background-color: var(--turquoise-99pc);
+}
+
+.zplTextarea.cornflowerBlue ::-moz-selection {
+    background-color: var(--cornflower-blue-99pc);
+}
+
+
+.zplTextarea.deepPurple ::-moz-selection {
+    background-color: var(--deep-purple-99pc);
+}
+
+.zplTextarea ::selection {
+    background-color: rgba(253, 189, 57, 0.99);
+    /* background-color: var(--light-orange-99pc); */
+}
+
+.zplTextarea.yellow ::selection {
+    background-color: rgba(254, 207, 51, 0.99);
+    /* background-color: var(--yellow-99pc); */
+}
+
+.zplTextarea.orange ::selection {
+    background-color: rgba(246, 152, 51, 0.99);
+    /* background-color: var(--orange-99pc); */
+}
+
+.zplTextarea.peach ::selection {
+    background-color: rgba(238, 103, 35, 0.99);
+    /* background-color: var(--peach-99pc); */
+}
+
+.zplTextarea.green ::selection {
+    background-color: rgba(200, 207, 45, 0.99);
+    /* background-color: var(--green-99pc); */
+}
+
+.zplTextarea.turquoise ::selection {
+    background-color: rgba(13, 207, 218, 0.99);
+    /* background-color: var(--turquoise-99pc); */
+}
+
+.zplTextarea.cornflowerBlue ::selection {
+    background-color: rgba(65, 154, 249, 0.99);
+    /* background-color: var(--cornflower-blue-99pc); */
+}
+
+.zplTextarea.deepPurple ::selection {
+    background-color: rgba(219, 124, 238, 0.99);
+    /* background-color: var(--deep-purple-99pc); */
+}

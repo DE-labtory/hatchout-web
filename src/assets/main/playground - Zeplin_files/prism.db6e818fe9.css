@@ -1,0 +1,138 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    display: block;
+}
+
+pre code,
+code[class*="language-"] {
+    color: #fff;
+    text-align: left;
+
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre code *,
+code[class*="language-"] * {
+    font-family: Roboto Mono, monospace;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+    background-color: var(--peach-99pc);
+    text-shadow: none;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+    background-color: rgba(238, 103, 35, 0.99);
+    /* background-color: var(--peach-99pc); */
+    text-shadow: none;
+}
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--code-gray);
+}
+
+.token.function,
+.token.builtin,
+.token.property,
+.token.attr-name,
+.token.char,
+.token.inserted {
+    color: var(--code-blue);
+}
+
+.token.class,
+.token.selector,
+.token.string,
+.token.tag {
+    color: var(--code-yellow);
+}
+
+.token.atrule,
+.token.keyword {
+    color: var(--code-red);
+}
+
+.token.number,
+.token.hexcode,
+.token.attr-value {
+    color: var(--code-green);
+}
+
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+code[class*="language-xml"] .token.punctuation,
+code[class*="language-html"] .token.punctuation,
+code[class*="language-markup"] .token.punctuation {
+    color: var(--code-yellow);
+}
+
+
+code[class*="language-css"] .token.builtin,
+code[class*="language-sass"] .token.builtin,
+code[class*="language-scss"] .token.builtin ,
+code[class*="language-less"] .token.builtin,
+code[class*="language-stylus"] .token.builtin,
+code[class*="language-css"] .token.function,
+code[class*="language-sass"] .token.function,
+code[class*="language-scss"] .token.function ,
+code[class*="language-less"] .token.function,
+code[class*="language-stylus"] .token.function {
+    color: var(--code-red);
+}

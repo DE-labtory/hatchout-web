@@ -14,6 +14,7 @@ export const store = new Vuex.Store({
     myItems: [
       {name: 'item 1', price: 100, detail: 'detail 1'},
       {name: 'item 2', price: 200, detail: 'detail 2'},
+      {name: 'item 3', price: 300, detail: 'detail 3'},
     ] as Item[],
   },
   mutations: {},

@@ -1,0 +1,118 @@
+body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.oldHeader {
+    position: relative;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    box-shadow: 0 2px 4px 0 var(--teflon-20pc);
+    background-color: #fff;
+    color: var(--teflon);
+}
+
+.oldHeader.tall {
+    align-items: center;
+    height: 160px;
+    padding-top: 16px;
+    box-shadow: 0 2px 4px 0 var(--teflon-20pc);
+}
+
+.oldHeader .headerLeft,
+.oldHeader .headerRight {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 204px;
+}
+
+.oldHeader .headerCenter,
+.oldHeader .headerRight {
+    position: relative;
+    height: 28px;
+}
+
+.oldHeader .headerLeft {
+    justify-content: flex-start;
+}
+
+.oldHeader .headerCenter {
+    overflow: hidden;
+    flex: 0 1 auto;
+}
+
+.oldHeader.tall .headerCenter {
+    position: relative;
+    height: initial;
+    overflow: initial;
+}
+
+.oldHeader.tall.tabs .headerCenter {
+    align-self: flex-end;
+}
+
+.oldHeader .headerRight {
+    justify-content: flex-end;
+}
+
+.oldHeader.tall .headerLeft,
+.oldHeader.tall .headerRight {
+    align-self: flex-start;
+}
+
+.oldHeader h1 {
+    margin-top: 12px;
+    text-align: center;
+    line-height: 33px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.oldHeader h2 {
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.oldHeader h3 {
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.oldHeader h3 a,
+.oldHeader h3 a span {
+    color: var(--gandalf);
+}
+
+#zeplin {
+    width: 36px;
+    height: 29px;
+    margin-right: 20px;
+}
+
+body.features-webviews #zeplin {
+    display: none;
+}
+
+#upLink {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--gandalf);
+    display: flex;
+    align-items: center;
+}
+
+#upLink img {
+    margin-right: 6px;
+}
+
+.sacrificeForSafariGods {
+    display: none;
+}

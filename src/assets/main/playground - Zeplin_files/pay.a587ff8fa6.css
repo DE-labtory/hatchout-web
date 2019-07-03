@@ -1,0 +1,654 @@
+#planChooserOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 48px 0;
+    overflow: auto;
+    z-index: 1000;
+    background-color: var(--teflon-70pc);
+}
+
+#planChooserContent {
+    width: 960px;
+    margin: 0 auto;
+    border-radius: 4px;
+    margin-bottom: 48px;
+    overflow: hidden;
+}
+
+.testimonial {
+    padding: 48px 72px 36px 36px;
+    display: flex;
+    background-color: var(--whitey);
+}
+
+.testimonial img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-right: 36px;
+}
+
+.testimonial > div {
+    flex: 1;
+}
+
+.testimonial blockquote {
+    margin-bottom: 12px;
+    line-height: 29px;
+    font-size: 25px;
+    font-style: italic;
+    color: var(--teflon);
+}
+
+.testimonial .author {
+    line-height: 19px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--teflon);
+}
+
+.testimonial .titleTeamCompany {
+    line-height: 19px;
+    font-size: 16px;
+    color: var(--teflon);
+}
+
+.testimonial .titleTeamCompany .company {
+    font-weight: 500;
+    color: #007042;
+}
+
+#planChooserContent .warning {
+    background-color: var(--cornflower-blue);
+    padding: 12px 24px;
+    display: none;
+}
+
+#planChooserContent .warning p {
+    line-height: 21px;
+    font-size: 18px;
+    color: #fff;
+}
+
+#planChooserContent .warning p:not(:last-child) {
+    margin-bottom: 21px;
+}
+
+#planChooserContent .warning a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+#planChooserContent[data-current-plan-id="starter_monthly"] .warning.starterAndGB,
+#planChooserContent[data-current-plan-id="starter_annual"] .warning.starterAndGB,
+#planChooserContent[data-current-plan-id="growing_monthly"] .warning.starterAndGB,
+#planChooserContent[data-current-plan-id="growing_annual"] .warning.starterAndGB,
+#planChooserContent[data-current-plan-id="company_monthly"] .warning.company,
+#planChooserContent[data-current-plan-id="company_annual"] .warning.company,
+#planChooserContent[data-current-plan-id="bff"] .warning.bff {
+    display: block;
+}
+
+#planChooserContent[data-current-plan-id="starter_monthly"] .oldPlanName::before,
+#planChooserContent[data-current-plan-id="starter_annual"] .oldPlanName::before {
+    content: "STARTER"
+}
+
+#planChooserContent[data-current-plan-id="growing_monthly"] .oldPlanName::before,
+#planChooserContent[data-current-plan-id="growing_annual"] .oldPlanName::before {
+    content: "GROWING BUSINESS"
+}
+
+#planChooserContent[data-current-plan-id^="organization"] .plan.organization .createLink,
+#planChooserContent:not([data-current-plan-id^="organization"]) .plan.organization .choosePlan {
+    display: none;
+}
+
+#planChooser {
+    position: relative;
+    padding: 36px 24px 48px;
+    background-color: #fff;
+}
+
+#planChooser h2 {
+    text-align: center;
+    line-height: 28px;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--teflon);
+}
+
+.paymentInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.paymentInfo .filler {
+    width: 180px;
+}
+
+#planChooser .paymentPeriods {
+    position: relative;
+    display: flex;
+}
+
+#planChooser .paymentPeriodSlider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 86px;
+    height: 24px;
+    border-radius: 29px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    background-color: var(--light-orange);
+    transition: transform 150ms ease-out;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#planChooser .paymentPeriods .paymentPeriodSlider span {
+    position: absolute;
+    left: 50%;
+    color: transparent;
+    transform: translateX(-50%);
+    transition: color 150ms ease-out;
+}
+
+#monthlyPayment:checked ~ .paymentPeriodSlider .monthly,
+#annualPayment:checked ~ .paymentPeriodSlider .annual {
+    color: #fff;
+}
+
+#monthlyPayment:checked ~ .paymentPeriodSlider {
+    transform: translateX(-14px);
+}
+
+#annualPayment:checked ~ .paymentPeriodSlider {
+    transform: translateX(66px);
+}
+
+#planChooser .paymentPeriods input[type="radio"] {
+    display: none;
+}
+
+#planChooser .paymentPeriods label {
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    color: var(--gandalf);
+    transition: color 150ms ease-out;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#planChooser .paymentPeriods label.annual {
+    margin-left: 26px;
+    width: 50px;
+}
+
+#planChooser .paymentPeriods input:checked + label {
+    color: transparent;
+}
+
+#annualPayment:not(:checked) + label::after {
+    position: absolute;
+    padding-left: 3px;
+    content: "(Save 10%)";
+    white-space: nowrap;
+    line-height: 24px;
+    font-size: 14px;
+    color: #fdbd39;
+    /* color: var(--light-orange); */
+}
+
+#couponInfo {
+    position: relative;
+    height: 24px;
+}
+
+#couponForm {
+    width: 180px;
+    margin: 0;
+}
+
+.couponArea {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+#couponCode {
+    flex: 1;
+    min-width: 0;
+    height: 22px;
+    background-image: none;
+    border: none;
+    line-height: 21px;
+    font-size: 16px;
+    color: var(--teflon);
+}
+
+#couponCode:not(:focus) {
+    cursor: pointer;
+}
+
+.couponPlaceholder {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    line-height: 19px;
+    font-size: 16px;
+    color: var(--teflon);
+    pointer-events: none;
+}
+
+#couponCode:focus ~ .couponPlaceholder,
+.couponArea.typed .couponPlaceholder {
+    display: none;
+}
+
+.couponUnderline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+
+    background-color: transparent;
+    will-change: background-color;
+    transition: background-color 300ms ease-out;
+}
+
+#couponCode:focus ~ .couponUnderline {
+    background-color: var(--light-orange);
+}
+
+.couponLabel {
+    position: absolute;
+    left: 0;
+    top: -14px;
+    opacity: 0;
+    font-size: 12px;
+    color: var(--light-orange);
+    transform-origin: left top;
+
+    transition: opacity 200ms ease;
+    will-change: opacity;
+    pointer-events: none;
+}
+
+#couponCode:focus ~ .couponLabel {
+    opacity: 1;
+}
+
+#applyCouponButton {
+    display: none;
+    width: initial;
+    height: initial;
+    margin: initial;
+    padding: 0 6px;
+    border-radius: 40px;
+    background-color: var(--light-orange);
+    line-height: 20px;
+    font-size: 15px;
+    color: #fff;
+}
+
+#applyCouponButton:active {
+    background-color: #fab036; /* blent color: peach-15pc and light-orange */
+}
+
+#applyCouponButton:disabled {
+    opacity: 1;
+    background-color: var(--clooney);
+}
+
+#applyCouponButton:enabled .disabled,
+#applyCouponButton:disabled .enabled {
+    display: none;
+}
+
+.couponArea.typed #applyCouponButton {
+    display: block;
+}
+
+#discountNotice {
+    height: 16px;
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--peach);
+}
+
+#plans {
+    padding: 20px 0 0;
+    display: flex;
+}
+
+#plans .plan {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 70px;
+}
+
+#plans .plan:first-child {
+    margin-left: 46px;
+}
+
+#plans .plan:last-child {
+    margin-right: 18px;
+    margin-left: 42px;
+    width: 236px;
+    position: relative;
+}
+
+#plans .plan:last-child::before {
+    content: "";
+    height: 120px;
+    width: 2px;
+    border-radius: 2px;
+    background-color: rgba(188, 181, 185, 0.5);
+    /* background-color: var(--warm-gray-50pc); */
+    position: absolute;
+    top: 56px;
+    left: -44px;
+}
+
+#plans .planName {
+    line-height: 21px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--teflon);
+    margin-bottom: 36px;
+}
+
+#plans .growing .planName,
+#plans .organization .planName {
+    margin-bottom: 0;
+}
+
+#plans #preferred,
+#plans #orgAnnualDiscount {
+    line-height: 19px;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--light-orange);
+    margin-bottom: 17px;
+}
+
+#plans .organization:not(.annual) #orgAnnualDiscount {
+    visibility: hidden;
+}
+
+#plans .priceInfo {
+    display: flex;
+    margin-bottom: 6px;
+}
+
+#plans .planPrice {
+    line-height: 40px;
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--teflon);
+    position: relative;
+    text-align: center;
+}
+
+#plans .planPrice::before {
+    content: "$";
+    line-height: 19px;
+    font-size: 16px;
+    color: #554d56;
+    /* color: var(--teflon); */
+    vertical-align: top;
+}
+
+#plans .planPrice::after {
+    content: attr(data-fr);
+    position: absolute;
+    font-size: 18px;
+    line-height: 21px;
+    top: -2px;
+}
+
+#plans .planPeriod {
+    line-height: 19px;
+    font-size: 16px;
+    text-align: left;
+    color: var(--teflon);
+    align-self: flex-end;
+}
+
+#plans .monthlyPrice {
+    line-height: 19px;
+    font-size: 16px;
+    color: var(--gandalf);
+    visibility: hidden;
+    margin-bottom: 12px;
+}
+
+#plans .plan.annual .monthlyPrice {
+    visibility: visible;
+}
+
+#plans .monthlyPrice::before {
+    content: "Down from $";
+}
+
+#plans .perMember {
+    line-height: 16px;
+    font-size: 14px;
+    color: var(--gandalf);
+    margin-bottom: 12px;
+}
+
+#plans .planProjectCount {
+    margin-bottom: 24px;
+    line-height: 21px;
+    font-size: 18px;
+    color: var(--teflon);
+    text-align: center;
+    white-space: pre-line;
+}
+
+#plans .plan.organization .planProjectCount {
+    margin-bottom: 6px;
+}
+
+#plans .plan button,
+#plans .plan.organization a.bttn {
+    color: var(--light-orange);
+    background-color: #fff;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+#plans .plan.organization a.bttn {
+    line-height: 42px;
+}
+
+#plans .plan.recommended button {
+    color: #fff;
+    background-color: var(--peach);
+}
+
+#plans .plan button::before {
+    content: "CHOOSE PLAN";
+}
+
+#plans .plan.current button {
+    background-color: var(--green);
+    box-shadow: initial;
+    color: #fff;
+}
+
+#plans .plan.current button::before {
+    content: "CURRENT PLAN";
+}
+
+#plans .plan .cancelPlan {
+    line-height: 19px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--gandalf);
+    visibility: hidden;
+    text-decoration: underline;
+}
+
+#plans .plan:not(.organization).current .cancelPlan {
+    visibility: visible;
+}
+
+#miniFAQ {
+    margin: 0 auto;
+}
+
+#miniFAQ section {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+#miniFAQ section:nth-child(n+2) {
+    margin-top: 24px;
+}
+
+#miniFAQ h3 {
+    position: relative;
+    margin-bottom: 6px;
+    text-align: left;
+    line-height: 21px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--teflon);
+}
+
+#miniFAQ p {
+    line-height: 19px;
+    font-size: 16px;
+    color: var(--gandalf);
+}
+
+#miniFAQ p:not(:last-child) {
+    margin-bottom: 19px;
+}
+
+#miniFAQ a {
+    font-weight: 500;
+    color: var(--green);
+}
+
+#friendlyReminderDialog {
+    width: 600px;
+    height: 390px;
+    padding-top: 48px;
+    border-radius: 4px;
+    color: var(--teflon);
+}
+
+#friendlyReminderDialog h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 21px;
+    font-size: 18px;
+}
+
+#friendlyReminderDialog h1 img {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 6px;
+}
+
+#friendlyReminderDialog .friendlyReminderDialogBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0 24px;
+}
+
+#friendlyReminderDialog .friendlyReminderDialogBody p {
+    padding: 0 24px;
+    line-height: 18px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#friendlyReminderDialog .friendlyReminderDialogBody img {
+    margin: 24px 0;
+}
+
+#friendlyReminderDialog .friendlyReminderDialogFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#groupCaption {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--teflon);
+    margin-top: 16px;
+}
+
+#groupCaption .caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#groupCaption .starterAndGrowingCaption {
+    width: 594px;
+}
+
+#groupCaption .starterAndGrowingCaption ul {
+    margin-left: -10px;
+}
+
+#groupCaption .organizationCaption {
+    width: 271px;
+}
+
+#groupCaption p {
+    font-weight: 500;
+}
+
+#groupCaption ul {
+    margin: 24px 0 48px;
+}
+
+#groupCaption li {
+    display: flex;
+
+    text-align: left;
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+#groupCaption li::before {
+    content: "•";
+    text-align: left;
+    padding-right: 6px;
+}

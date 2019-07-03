@@ -1,7 +1,7 @@
 <template>
     <div>
         <MainGameSection v-bind:ghost="unbornGhost" v-bind:items="items"></MainGameSection>
-<!--        <MainRankingSection v-bind:ranking="ranking"></MainRankingSection>-->
+        <MainRankingSection v-bind:firstGhost="firstGhost" v-bind:ghosts="ghosts"></MainRankingSection>
 <!--        <MainListSection v-bind:list="list"></MainListSection>-->
     </div>
     
@@ -21,6 +21,7 @@ import {Item} from '@/types/item';
 export default class Main extends Vue {
     private ghosts: Ghost[];
     private unbornGhost: Ghost | null;
+    private firstGhost: Ghost | null;
     private items: Item[] | null;
 
     constructor() {
@@ -28,8 +29,10 @@ export default class Main extends Vue {
         this.ghosts = this.$store.state.myGhosts;
         if (this.$store.state.myGhosts.length > 0) {
             this.unbornGhost = this.$store.state.myGhosts[0];
+            this.firstGhost = this.$store.state.myGhosts[0];
         } else {
             this.unbornGhost = null;
+            this.firstGhost = null;
         }
         this.items = this.$store.state.myItems;
 
