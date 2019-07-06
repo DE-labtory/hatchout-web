@@ -17,9 +17,7 @@
         <div>악한 점수 순서</div>
       </div>
     </div>
-    <div class="ghost-card-list">
-      <GhostCard v-bind:key="ghost.gene" v-bind:ghost="ghost" v-for="ghost in ghosts"></GhostCard>
-    </div>
+    <GhostTable v-bind:ghosts="ghosts"></GhostTable>
   </div>
 </template>
 
@@ -28,6 +26,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Ghost} from '@/types';
 import GhostCard from '@/components/cards/GhostCard.vue';
 import RadioBullet from '@/components/bullets/RadioBullet.vue';
+import GhostTable from '@/components/tables/GhostTable.vue';
 
 enum MenuType {
   BY_TIME = 'byTime',
@@ -36,7 +35,7 @@ enum MenuType {
 }
 
 @Component({
-  components: {GhostCard, RadioBullet},
+  components: {GhostCard, RadioBullet, GhostTable},
 })
 export default class GhostListSection extends Vue {
   @Prop() private ghosts!: Ghost[];
@@ -60,16 +59,7 @@ export default class GhostListSection extends Vue {
   }
 
   .ghost-list-section {
-    height: 403px;
     background-color: #eaeaea;
-  }
-
-  .ghost-card-list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to right, #eaeaea, #eaeaea 87%, #dedede);
   }
 
   .sort-method-item {
