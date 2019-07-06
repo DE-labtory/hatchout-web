@@ -1,26 +1,25 @@
 <template>
   <div class="ghost-detail-section">
     <template v-if=ghost>
-      <div class="vertical-center-align" style="width: 250px;">
-        <span class="token-name-h1" style="padding-bottom: 10px">{{ghost.name}}</span>
-        <span class="token-id">{{ghost.gene}}</span>
-        <div>
-          good
+      <div style="width:500px">
+        <div class="vertical-center-align content" style="width: 300px;">
+          <span class="token-name-h1" style="padding-bottom: 10px">{{ghost.name}}</span>
+          <span class="token-id">{{ghost.gene}}</span>
+          <div class="horizontal-left-align">
+            <Bullet></Bullet>
+            <Gauge v-bind:ratio=0.7 v-bind:type=angelType() style="margin-top: 3px"></Gauge>
+          </div>
+          <div class="horizontal-left-align">
+            <Bullet></Bullet>
+            <Gauge v-bind:ratio=0.3 v-bind:type=ghostType() style="margin-top: 3px"></Gauge>
+          </div>
+          <button class="button">
+            <span>FOSTER</span>
+          </button>
         </div>
-        <div>
-          evil
+        <div class="sidebar" style="width: 200px; max-width:200px; min-width:200px">
+          <img v-bind:src="loadImage()">
         </div>
-      </div>
-      <div style="width: 250px; max-width:250px; min-width:250px">
-        <img v-bind:src="loadImage()">
-      </div>
-      <div class="vertical-center-align" style="width: 250px; margin-top:20px">
-        <button class="button">
-          <span>Foster</span>
-        </button>
-        <button class="button">
-          <span>Combine</span>
-        </button>
       </div>
     </template>
   </div>
@@ -29,18 +28,36 @@
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Ghost} from '@/types';
+import Gauge from '@/components/gauges/gauge.vue';
+import {GaugeType} from '@/types/gauge';
+import Bullet from '@/components/bullets/Bullet.vue';
 
-@Component
+@Component({
+  components: {Gauge, Bullet},
+})
 export default class GhostDetailSection extends Vue {
   @Prop() private ghost?: Ghost;
 
   public loadImage(): string {
     return require(`@/assets/characters/${(Math.floor(Math.random() * 10) + 1).toString()}.png`);
   }
+
+  public angelType(): GaugeType {
+    return GaugeType.Angel;
+  }
+
+  public ghostType(): GaugeType {
+    return GaugeType.Ghost;
+  }
 }
 </script>
 
 <style scoped lang="scss">
+  @font-face {
+    font-family: 'NexaRustSans';
+    src: url('~@/assets/fonts/nexa-rust/NexaRustSans-Black.otf')
+  }
+
   .ghost-detail-section {
     display: flex;
     flex-direction: row;
@@ -55,11 +72,34 @@ export default class GhostDetailSection extends Vue {
     max-height: 100%;
   }
 
+  .content {
+    width: 67%;
+    float: left;
+  }
+
+  .sidebar {
+    width: 33%;
+    float: right;
+  }
+
   .vertical-center-align {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    vertical-align: middle;
+  }
+
+  .vertical-center-align > * {
+    margin: 10px 0;
+  }
+
+  .horizontal-left-align {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+  }
+
+  .horizontal-left-align > * {
+    margin: 0 5px;
   }
 
   .token-name-h1 {
@@ -89,12 +129,14 @@ export default class GhostDetailSection extends Vue {
   }
 
   .button {
-    width: 200px;
-    height: 48px;
-    border-radius: 16px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    background-color: #ec8d16;
-    margin: 10px;
+    width: 274px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 5px;
+    outline: none;
+    border: transparent;
+    background: url('~@/assets/buttons/group-2-copy-9@2x.png') no-repeat;
+    background-size: 270px 48px;
   }
 
   .button span {
