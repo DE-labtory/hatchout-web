@@ -28,13 +28,20 @@ export default class GhostCard extends Vue {
 
 <style scoped lang="scss">
   .ghost-card {
-    width: 123px;
-    height: 189px;
-    margin: 20px 16px;
+    width: 172.2px;
+    margin: 21px 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .ghost-image {
+    border-radius: 20px;
+    width: 139px;
+    height: 122.6px;
+    border: solid 1px #ecceff;
+    background-color: #7d4dbd;
   }
 
   img {
@@ -45,7 +52,7 @@ export default class GhostCard extends Vue {
   .token-name {
     width: 120px;
     height: 20px;
-    margin-top: 15px;
+
     font-family: Ubuntu;
     font-size: 18px;
     font-weight: bold;
@@ -75,14 +82,15 @@ export default class GhostCard extends Vue {
   .rect {
     border-radius: 20% / 50%;
     overflow: hidden;
-    width: 100px;
-    height: 100px;
+    width: 172.2px;
+    height: 159.6px;
+    margin-bottom: 34.4px;
   }
 
   .rect-inner {
     border-radius: 50% / 20%;
-    width: 100px;
-    height: 100px;
+    width: 172.2px;
+    height: 159.6px;
     overflow: hidden;
     display: flex;
     align-content: center;
@@ -92,7 +100,7 @@ export default class GhostCard extends Vue {
 
   .rect-inner-in {
     border-radius: 32%;
-    width: 100px;
-    height: 100px;
+    width: 172.2px;
+    height: 159.6px;
   }
 </style>

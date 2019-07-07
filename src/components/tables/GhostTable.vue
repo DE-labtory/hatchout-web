@@ -37,4 +37,7 @@
     flex-direction: column;
     align-items: center;
   }
+  .table {
+  }
+
 </style>

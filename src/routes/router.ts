@@ -14,6 +14,11 @@ export const router = new Router({
       component: Home,
     },
     {
+      path: '/main',
+      name: 'main',
+      component: () => import('../views/Main.vue'),
+    },
+    {
       path: '/collection',
       name: 'collection',
       // route level code-splitting
