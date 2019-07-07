@@ -21,5 +21,10 @@ export const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ '../views/Collection.vue'),
     },
+    {
+      path: '/txHistory',
+      name: 'txHistory',
+      component: () => import('../views/TxHistory.vue'),
+    },
   ],
 });
