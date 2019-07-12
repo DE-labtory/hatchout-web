@@ -1,9 +1,8 @@
 <template>
     <div class="status-box">
-        <span v-bind:status="status"
-              :class="{'success': status==='success', 'fail': status==='fail'}">
-            {{status}}
-        </span>
+        <div v-bind:status="status" :class="{'success': status==='success', 'fail': status==='fail'}">
+            <span class="status-font">{{status}}</span>
+        </div>
     </div>
 </template>
 
@@ -24,12 +23,14 @@
         align-items: center;
         justify-content: center;
 
-        .success {
-            width: 66px;
-            height: 18px;
+        .horizontal-center-align {
+            display: flex;
+            flex-direction: column;
+            vertical-align: middle;
+            justify-content: center;
+        }
 
-            background-color: #48ae3a;
-
+        .status-font {
             font-family: Ubuntu;
             font-size: 16px;
             font-weight: normal;
@@ -38,24 +39,28 @@
             line-height: 1;
             letter-spacing: -0.28px;
             text-align: center;
+        }
+
+        .success {
+            @extend .horizontal-center-align;
+            @extend .status-font;
+
+            width: 66px;
+            height: 20px;
+
             color: #ffffff;
+            background-color: #48ae3a;
         }
 
         .fail {
+            @extend .horizontal-center-align;
+            @extend .status-font;
+
             width: 66px;
-            height: 18px;
+            height: 20px;
 
-            background-color: #fecb00;
-
-            font-family: Ubuntu;
-            font-size: 16px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1;
-            letter-spacing: -0.28px;
-            text-align: center;
             color: #aa4c4c;
+            background-color: #fecb00;
         }
     }
 </style>

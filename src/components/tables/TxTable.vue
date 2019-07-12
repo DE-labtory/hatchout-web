@@ -3,50 +3,78 @@
         <div style="width:1140px;">
             <div class="tx-table-head" style="padding: 8px 0;">
                 <div class="time-header">
-                    <span class="header-text">TIME</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">TIME</span>
+                    </div>
                 </div>
                 <div class="hash-header">
-                    <span class="header-text">TXN Hash</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">TXN Hash</span>
+                    </div>
                 </div>
                 <div class="from-header">
-                    <span class="header-text">From</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">From</span>
+                    </div>
                 </div>
                 <div class="to-header">
-                    <span class="header-text">To</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">To</span>
+                    </div>
                 </div>
                 <div class="purpose-header">
-                    <span class="header-text">Purpose</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">Purpose</span>
+                    </div>
                 </div>
                 <div class="fee-header">
-                    <span class="header-text">TxFee(eth/eos)</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">TxFee(eth/eos)</span>
+                    </div>
                 </div>
                 <div class="status-header">
-                    <span class="header-text">Status</span>
+                    <div class="vertical-center-align">
+                        <span class="header-text">Status</span>
+                    </div>
                 </div>
             </div>
             <div class="tx-table-body">
                 <div class="table-item" v-for="tx in txList">
                     <div class="item">
                         <div class="time-body">
-                            <span class="body-text">{{tx.timestamp}}</span>
+                            <div class="vertical-center-align">
+                                <span class="body-text">{{tx.timestamp}}</span>
+                            </div>
                         </div>
                         <div class="hash-body">
-                            <span class="body-text">{{tx.txHash}}</span>
+                            <div class="vertical-center-align">
+                                <span class="body-text">{{tx.txHash}}</span>
+                            </div>
                         </div>
                         <div class="from-body">
-                            <span class="body-text">{{tx.fromNickname}}</span>
+                            <div class="vertical-center-align">
+                                <span class="body-text">{{tx.fromNickname}}</span>
+                            </div>
                         </div>
                         <div class="to-body">
-                            <span class="body-text">{{tx.toNickname}}</span>
+                            <div class="vertical-center-align">
+                                <span class="body-text">{{tx.toNickname}}</span>
+                            </div>
                         </div>
                         <div class="purpose-body">
-                            <span class="body-text">{{tx.purpose}}</span>
+                            <div class="vertical-center-align">
+                                <span class="body-text">{{tx.purpose}}</span>
+                            </div>
                         </div>
                         <div class="fee-body">
-                            <span class="body-text">{{tx.txFee}}</span>
+                            <div class="vertical-center-align">
+                                <span class="body-text">{{tx.txFee}}</span>
+                            </div>
                         </div>
                         <div class="status-body">
-                            <StatusBox v-bind:status="tx.status"></StatusBox>
+                            <div class="vertical-center-align">
+                                <StatusBox v-bind:status="tx.status"></StatusBox>
+                            </div>
                         </div>
                     </div>
                     <div class="item-line"></div>
@@ -57,8 +85,8 @@
 </template>
 
 <script lang="ts">
-    import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {Tx} from '@/types/tx';
+    import {Component, Prop, Vue} from "vue-property-decorator";
+    import {Tx} from "@/types/tx";
     import StatusBox from "@/components/boxes/StatusBox.vue";
 
     @Component({
@@ -75,6 +103,20 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+
+        .vertical-center-align {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .horizontal-center-align {
+            display: flex;
+            flex-direction: row;
+            vertical-align: middle;
+            justify-content: center;
+        }
 
         &-head {
             display: flex;
@@ -95,6 +137,8 @@
             }
 
             .time-header {
+                @extend .horizontal-center-align;
+
                 width: 152px;
                 height: 48px;
                 border-radius: 28px;
@@ -104,6 +148,8 @@
             }
 
             .hash-header {
+                @extend .horizontal-center-align;
+
                 width: 192px;
                 height: 48px;
                 border-radius: 28px;
@@ -114,6 +160,8 @@
             }
 
             .from-header {
+                @extend .horizontal-center-align;
+
                 width: 152px;
                 height: 48px;
                 border-radius: 28px;
@@ -123,6 +171,8 @@
             }
 
             .to-header {
+                @extend .horizontal-center-align;
+
                 width: 152px;
                 height: 48px;
                 border-radius: 28px;
@@ -132,6 +182,8 @@
             }
 
             .purpose-header {
+                @extend .horizontal-center-align;
+
                 width: 192px;
                 height: 48px;
                 border-radius: 28px;
@@ -141,6 +193,8 @@
             }
 
             .fee-header {
+                @extend .horizontal-center-align;
+
                 width: 152px;
                 height: 48px;
                 border-radius: 28px;
@@ -150,6 +204,8 @@
             }
 
             .status-header {
+                @extend .horizontal-center-align;
+
                 width: 100px;
                 height: 48px;
                 border-radius: 28px;
@@ -178,6 +234,8 @@
                     }
 
                     .time-body {
+                        @extend .horizontal-center-align;
+
                         width: 152px;
                         height: 48px;
 
@@ -185,6 +243,8 @@
                     }
 
                     .hash-body {
+                        @extend .horizontal-center-align;
+
                         width: 192px;
                         height: 48px;
 
@@ -192,6 +252,8 @@
                     }
 
                     .from-body {
+                        @extend .horizontal-center-align;
+
                         width: 152px;
                         height: 48px;
 
@@ -199,6 +261,8 @@
                     }
 
                     .to-body {
+                        @extend .horizontal-center-align;
+
                         width: 152px;
                         height: 48px;
 
@@ -206,6 +270,8 @@
                     }
 
                     .purpose-body {
+                        @extend .horizontal-center-align;
+
                         width: 192px;
                         height: 48px;
 
@@ -213,6 +279,8 @@
                     }
 
                     .fee-body {
+                        @extend .horizontal-center-align;
+
                         width: 152px;
                         height: 48px;
 
@@ -220,6 +288,8 @@
                     }
 
                     .status-body {
+                        @extend .horizontal-center-align;
+
                         width: 100px;
                         height: 48px;
                     }
