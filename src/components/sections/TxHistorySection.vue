@@ -14,8 +14,8 @@
                 </div>
             </div>
             <div class="tx-purpose-filters">
-                <div>Select</div>
-                <div>Purpose</div>
+                <SelectBox></SelectBox>
+                <span class="select-name">Purpose</span>
             </div>
         </div>
         <TxTable v-bind:txList="txList"></TxTable>
@@ -27,6 +27,7 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import TxTable from '@/components/tables/TxTable.vue';
     import TxRadioBullet from '@/components/bullets/TxRadioBullet.vue';
+    import SelectBox from '@/components/boxes/SelectBox.vue';
     import {Tx} from '@/types/tx';
 
     enum MenuType {
@@ -35,7 +36,7 @@
     }
 
     @Component({
-        components: {TxTable, TxRadioBullet},
+        components: {SelectBox, TxTable, TxRadioBullet},
     })
     export default class TxHistorySection extends Vue {
         @Prop() private txList!: Tx[];
@@ -106,6 +107,10 @@
                 display: flex;
                 flex-direction: row-reverse;
                 vertical-align: middle;
+                justify-content: space-between;
+
+                width: 295px;
+                height: 48px;
 
                 font-family: Ubuntu;
                 font-size: 16px;
@@ -115,6 +120,11 @@
                 line-height: normal;
                 letter-spacing: -0.02px;
                 color: #ffffff;
+
+                .select-name {
+                    width: 60px;
+                    height: 18px;
+                }
             }
         }
     }
