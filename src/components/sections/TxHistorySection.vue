@@ -15,7 +15,9 @@
             </div>
             <div class="tx-purpose-filters">
                 <SelectBox></SelectBox>
-                <span class="select-name">Purpose</span>
+                <div class="vertical-center-align">
+                    <span class="select-name">Purpose</span>
+                </div>
             </div>
         </div>
         <TxTable v-bind:txList="txList"></TxTable>
@@ -121,10 +123,19 @@
                 letter-spacing: -0.02px;
                 color: #ffffff;
 
-                .select-name {
-                    width: 60px;
-                    height: 18px;
+                .vertical-center-align {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .select-name {
+                        width: 60px;
+                        height: 18px;
+                    }
                 }
+
+
             }
         }
     }
