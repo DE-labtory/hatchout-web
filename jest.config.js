@@ -10,7 +10,7 @@ module.exports = {
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
   },
   transformIgnorePatterns: [
     '/node_modules/'
@@ -21,17 +21,10 @@ module.exports = {
   snapshotSerializers: [
     'jest-serializer-vue'
   ],
-  testMatch: [
-    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
-  ],
+  testMatch: [],
   testURL: 'http://localhost/',
   watchPlugins: [
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname'
   ],
-  globals: {
-    'ts-jest': {
-      babelConfig: true
-    }
-  }
-}
+};
