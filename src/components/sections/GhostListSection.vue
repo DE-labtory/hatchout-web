@@ -22,30 +22,27 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Ghost} from '@/types';
-import GhostCard from '@/components/cards/GhostCard.vue';
-import RadioBullet from '@/components/bullets/RadioBullet.vue';
-import GhostTable from '@/components/tables/GhostTable.vue';
-
-enum MenuType {
-  BY_TIME = 'byTime',
-  BY_GOODNESS = 'byGoodness',
-  BY_EVILNESS = 'byEvilness',
-}
-
-@Component({
-  components: {GhostCard, RadioBullet, GhostTable},
-})
-export default class GhostListSection extends Vue {
-  @Prop() private ghosts!: Ghost[];
-  private activeSortMethod: MenuType;
-
-  constructor() {
-    super();
-    this.activeSortMethod = MenuType.BY_TIME;
+  import {Component, Prop, Vue} from 'vue-property-decorator';
+  import {Ghost} from '@/types';
+  import GhostCard from '@/components/cards/GhostCard.vue';
+  import RadioBullet from '@/components/bullets/RadioBullet.vue';
+  import GhostTable from '@/components/tables/GhostTable.vue';
+  enum MenuType {
+    BY_TIME = 'byTime',
+    BY_GOODNESS = 'byGoodness',
+    BY_EVILNESS = 'byEvilness',
   }
-}
+  @Component({
+    components: {GhostCard, RadioBullet, GhostTable},
+  })
+  export default class GhostListSection extends Vue {
+    @Prop() private ghosts!: Ghost[];
+    private activeSortMethod: MenuType;
+    constructor() {
+      super();
+      this.activeSortMethod = MenuType.BY_TIME;
+    }
+  }
 </script>
 
 <style scoped lang="scss">
@@ -57,11 +54,9 @@ export default class GhostListSection extends Vue {
     align-items: center;
     justify-content: center;
   }
-
   .ghost-list-section {
     background-color: #eaeaea;
   }
-
   .sort-method-item {
     display: flex;
     flex-direction: row;
@@ -79,11 +74,9 @@ export default class GhostListSection extends Vue {
     letter-spacing: -0.3px;
     color: #9f9f9f;
   }
-
   .active {
     color: #a05acb;
   }
-
   .sort-method-item:hover {
     cursor: pointer;
     color: #a05acb;
