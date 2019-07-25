@@ -2,7 +2,7 @@
   <div class="ghost-card">
     <div class="rect">
       <div class="rect-inner">
-        <div class="rect-inner-in" :style="{'background-image': 'url(' + require('../../assets/ghost-detail-section-background.png') + ')'}">
+        <div class="rect-inner-in" :style="{'background-image': 'url(' + require('@/assets/ghost-detail-section-background.png') + ')'}">
           <img v-bind:src="loadImage()">
         </div>
       </div>

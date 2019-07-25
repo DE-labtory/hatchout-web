@@ -25,8 +25,8 @@
 <script lang="ts">
 import {Vue, Component, Prop} from 'vue-property-decorator';
 import {Ghost} from '@/types';
-import GhostCard from '@/components/cards/GhostCard.vue';
-import GhostTable from '@/components/tables/GhostTable.vue';
+import GhostCard from '@/ui/web/components/cards/GhostCard.vue';
+import GhostTable from '@/ui/web/components/tables/GhostTable.vue';
 
 @Component({
     components: { GhostCard, GhostTable},

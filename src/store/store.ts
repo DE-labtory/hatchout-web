@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import {Ghost} from '@/types';
-import {Tx} from '@/types/tx';
+import {Ghost} from '@/domain/types';
+import {Tx} from '@/domain/types/tx';
 
 Vue.use(Vuex);
 

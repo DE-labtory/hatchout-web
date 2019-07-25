@@ -12,7 +12,7 @@
 <script lang="ts">
   import {Vue, Component, Prop} from 'vue-property-decorator';
   import {Ghost} from '@/types';
-  import GhostCard from '@/components/cards/GhostCard.vue';
+  import GhostCard from '@/ui/web/components/cards/GhostCard.vue';
 
   @Component({
     components: {GhostCard},

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '../views/Home.vue';
+import Home from '@/ui/web/pages/Home.vue';
 
 Vue.use(Router);
 
@@ -16,7 +16,7 @@ export const router = new Router({
     {
       path: '/main',
       name: 'main',
-      component: () => import('../views/Main.vue'),
+      component: () => import('@/ui/web/pages/Main.vue'),
     },
     {
       path: '/collection',
@@ -24,12 +24,12 @@ export const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/Collection.vue'),
+      component: () => import(/* webpackChunkName: "about" */ '@/ui/web/pages/Collection.vue'),
     },
     {
       path: '/txHistory',
       name: 'txHistory',
-      component: () => import('../views/TxHistory.vue'),
+      component: () => import('@/ui/web/pages/TxHistory.vue'),
     },
   ],
 });

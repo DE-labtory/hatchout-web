@@ -28,9 +28,9 @@
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Ghost} from '@/types';
-import Gauge from '@/components/gauges/gauge.vue';
+import Gauge from '@/ui/web/components/gauges/gauge.vue';
 import {GaugeType} from '@/types/gauge';
-import Bullet from '@/components/bullets/Bullet.vue';
+import Bullet from '@/ui/web/components/bullets/Bullet.vue';
 
 @Component({
   components: {Gauge, Bullet},

@@ -86,8 +86,8 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from "vue-property-decorator";
-    import {Tx} from "@/types/tx";
-    import StatusBox from "@/components/boxes/StatusBox.vue";
+    import StatusBox from "@/ui/web/components/boxes/StatusBox.vue";
+    import {Tx} from '@/domain/types/tx';
 
     @Component({
         components: {StatusBox},

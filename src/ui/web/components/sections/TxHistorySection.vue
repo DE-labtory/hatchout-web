@@ -27,9 +27,9 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import TxTable from '@/components/tables/TxTable.vue';
-    import TxRadioBullet from '@/components/bullets/TxRadioBullet.vue';
-    import SelectBox from '@/components/boxes/SelectBox.vue';
+    import TxTable from '@/ui/web/components/tables/TxTable.vue';
+    import TxRadioBullet from '@/ui/web/components/bullets/TxRadioBullet.vue';
+    import SelectBox from '@/ui/web/components/boxes/SelectBox.vue';
     import {Tx} from '@/types/tx';
 
     enum MenuType {

@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import TokenDetailSection from '@/components/sections/GhostDetailSection.vue';
-import TokenListSection from '@/components/sections/GhostListSection.vue';
+import TokenDetailSection from '@/ui/web/components/sections/GhostDetailSection.vue';
+import TokenListSection from '@/ui/web/components/sections/GhostListSection.vue';
 import {Ghost} from '@/types';
 
 @Component({
