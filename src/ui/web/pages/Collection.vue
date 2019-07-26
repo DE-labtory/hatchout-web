@@ -9,7 +9,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import TokenDetailSection from '@/ui/web/components/sections/GhostDetailSection.vue';
 import TokenListSection from '@/ui/web/components/sections/GhostListSection.vue';
-import {Ghost} from '@/types';
+import {Ghost} from "@/domain/types";
 
 @Component({
   components: {TokenDetailSection, TokenListSection},

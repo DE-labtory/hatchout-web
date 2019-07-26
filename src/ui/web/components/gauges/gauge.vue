@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {GaugeType} from '@/types/gauge';
+import {GaugeType} from '@/domain/types/gauge';
 
 @Component
 export default class Gauge extends Vue {

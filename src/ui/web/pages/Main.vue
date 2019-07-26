@@ -8,7 +8,7 @@
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
 import MarketPlaceSection from '@/ui/web/components/sections/MarketPlaceSection.vue';
-import {Ghost} from '@/types';
+import {Ghost} from '@/domain/types';
 
 @Component({
     components: {MarketPlaceSection},

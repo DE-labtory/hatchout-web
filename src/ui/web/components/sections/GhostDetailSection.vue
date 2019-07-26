@@ -27,10 +27,10 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Ghost} from '@/types';
 import Gauge from '@/ui/web/components/gauges/gauge.vue';
-import {GaugeType} from '@/types/gauge';
 import Bullet from '@/ui/web/components/bullets/Bullet.vue';
+import {Ghost} from '@/domain/types';
+import {GaugeType} from '@/domain/types/gauge';
 
 @Component({
   components: {Gauge, Bullet},

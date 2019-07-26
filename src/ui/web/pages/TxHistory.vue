@@ -7,7 +7,7 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import TxHistorySection from '@/ui/web/components/sections/TxHistorySection.vue';
-    import {Tx} from '@/types/tx';
+    import {Tx} from '@/domain/types/tx';
 
     @Component({
         components: {TxHistorySection},

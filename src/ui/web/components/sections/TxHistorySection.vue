@@ -30,7 +30,7 @@
     import TxTable from '@/ui/web/components/tables/TxTable.vue';
     import TxRadioBullet from '@/ui/web/components/bullets/TxRadioBullet.vue';
     import SelectBox from '@/ui/web/components/boxes/SelectBox.vue';
-    import {Tx} from '@/types/tx';
+    import {Tx} from '@/domain/types/tx';
 
     enum MenuType {
         ALL_TX_LIST = 'allTxList',

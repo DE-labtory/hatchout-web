@@ -23,10 +23,10 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Ghost} from '@/types';
 import GhostCard from '@/ui/web/components/cards/GhostCard.vue';
 import RadioBullet from '@/ui/web/components/bullets/RadioBullet.vue';
 import GhostTable from '@/ui/web/components/tables/GhostTable.vue';
+import {Ghost} from '@/domain/types';
 
 enum MenuType {
   BY_TIME = 'byTime',

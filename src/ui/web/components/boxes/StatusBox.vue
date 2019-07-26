@@ -8,7 +8,6 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {Tx} from '@/types/tx';
 
     @Component
     export default class StatusBox extends Vue {

@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Ghost} from '@/types';
+import {Ghost} from '@/domain/types';
 
 @Component
 export default class GhostCard extends Vue {
