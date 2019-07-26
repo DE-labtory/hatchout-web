@@ -1,4 +1,5 @@
-import {User} from '@/types';
+import {User} from '@/domain/types';
+
 
 export const userModule  = {
   state: {
