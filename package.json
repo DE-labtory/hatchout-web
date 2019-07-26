@@ -13,6 +13,7 @@
     "@fluffy-spoon/inverse": "^1.34.0",
     "@fluffy-spoon/inverse-vue": "^1.15.0",
     "core-js": "^2.6.5",
+    "inversify": "^5.0.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.1.0",
