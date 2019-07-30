@@ -3,6 +3,7 @@
       <div class="top">
 
         <div class="title">Market Place</div>
+        <div>{{getSelf()}}</div>
       </div>
       <div class="middle">
         <GhostTable v-bind:ghosts="ghosts"></GhostTable>
@@ -37,8 +38,20 @@ export default class MarketPlaceSection extends Vue {
 
   constructor() {
     super();
+    // todo: set config with configfile
     this.currentNum = 1;
+    this.syncSelf();
   }
+
+  private syncSelf() {
+    return this.$store.dispatch('user/syncSelf');
+  }
+
+  public getSelf() {
+    return this.$store.getters['user/getSelf'];
+  }
+
+
 }
 </script>
 

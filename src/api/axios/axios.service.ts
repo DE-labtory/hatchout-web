@@ -11,7 +11,7 @@ export class AxiosService {
     @inject(TYPES.AxiosFactory) axiosFactory: AxiosFactory,
   ) {
     // todo: move config to config file
-    this.hatchout = axiosFactory.create('http//localhost:3000/');
+    this.hatchout = axiosFactory.create('http://localhost:3000/');
   }
   public getHatchOut(): AxiosInstance {
     return this.hatchout;

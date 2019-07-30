@@ -3,18 +3,29 @@ import {container} from '@/provider/container';
 import {UserApi} from '@/api';
 import {TYPES} from '@/provider/types';
 
-const userApi = container.get<UserApi>(TYPES.UserApi);
 
-export const userModule  = {
+export const userModule = {
+  namespaced: true,
   state: {
-    user: {} as User,
+    self: {} as User,
   },
   mutations: {
+    syncSelf(state, self) {
+      state.self = self;
+    },
   },
   actions: {
-
+    async syncSelf({commit}) {
+      const userApi = container.get<UserApi>(TYPES.UserApi);
+      // todo: fix parameter
+      const user = await userApi.get(4);
+      commit('syncSelf', user);
+    },
   },
   getters: {
+    getSelf(state) {
+      return state.self;
+    },
 
   },
 };

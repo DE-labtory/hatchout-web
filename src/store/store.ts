@@ -1,11 +1,18 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import {Ghost} from '@/types';
+import {Ghost, User} from '@/types';
 import {Tx} from '@/types/tx';
+import {container} from '@/provider/container';
+import {UserApi} from '@/api';
+import {TYPES} from '@/provider/types';
+import {userModule} from '@/store/modules/user';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
+  modules: {
+    user: userModule,
+  },
   state: {
     myGhosts: [
       {gene: 'token ID', evilPoint: 90, angelPoint: 80, name: 'Token Name', level: 2},
@@ -39,7 +46,13 @@ export const store = new Vuex.Store({
         status: 'fail',
       },
     ] as Tx[],
+    self: {} as User,
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+  },
+  actions: {
+  },
+  getters: {
+  },
+  strict: true,
 });
