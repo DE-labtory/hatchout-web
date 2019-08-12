@@ -3,11 +3,9 @@ import Vue from 'vue';
 import App from './App.vue';
 import {router} from '@/routes';
 import {store} from '@/store';
-import {Container} from '@fluffy-spoon/inverse';
-import {VueInverse} from '@fluffy-spoon/inverse-vue';
+import VueTypedi from 'vue-typedi';
 
-const container = new Container();
-Vue.use(VueInverse, container);
+Vue.use(VueTypedi);
 
 Vue.config.productionTip = false;
 
