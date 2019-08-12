@@ -4,7 +4,11 @@ import {Injectable} from 'vue-typedi';
 
 @Injectable()
 export class AxiosService {
-  private axiosInstance: AxiosInstance = AxiosFactory.create();
+  private axiosInstance: AxiosInstance;
+
+  constructor() {
+    this.axiosInstance = AxiosFactory.create();
+  }
 
   public get() {
     return this.axiosInstance;

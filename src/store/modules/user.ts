@@ -1,16 +1,10 @@
-import {User} from '@/types';
 
-export const userModule  = {
-  state: {
-    user: {} as User,
-  },
-  mutations: {
+import {Inject, Injectable} from 'vue-typedi';
+import {UserApi} from '@/api';
 
-  },
-  actions: {
+@Injectable()
+export class UserModule {
 
-  },
-  getters: {
-
-  },
-};
+  @Inject()
+  private userApi!: UserApi;
+}

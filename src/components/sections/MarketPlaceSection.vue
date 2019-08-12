@@ -27,6 +27,9 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 import {Ghost} from '@/types';
 import GhostCard from '@/components/cards/GhostCard.vue';
 import GhostTable from '@/components/tables/GhostTable.vue';
+import {Inject} from "vue-typedi";
+import tokens from "@/store/tokens";
+import {UserModule} from "@/store/modules/user";
 
 @Component({
     components: { GhostCard, GhostTable},
@@ -34,8 +37,11 @@ import GhostTable from '@/components/tables/GhostTable.vue';
 export default class MarketPlaceSection extends Vue {
   @Prop() public ghosts!: Ghost[];
   public currentNum!: number;
+  @Inject(tokens.USER_MODULE)
+  public userModule!: UserModule;
 
-  constructor() {
+  constructor(
+  ) {
     super();
     this.currentNum = 1;
   }
