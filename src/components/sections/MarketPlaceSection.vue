@@ -40,8 +40,7 @@ export default class MarketPlaceSection extends Vue {
   @Inject(tokens.USER_MODULE)
   public userModule!: UserModule;
 
-  constructor(
-  ) {
+  constructor() {
     super();
     this.currentNum = 1;
   }

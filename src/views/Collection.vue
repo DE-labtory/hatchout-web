@@ -10,6 +10,8 @@ import {Component, Vue} from 'vue-property-decorator';
 import TokenDetailSection from '@/components/sections/GhostDetailSection.vue';
 import TokenListSection from '@/components/sections/GhostListSection.vue';
 import {Ghost} from '@/types';
+import {Store} from "@/store/store";
+import {useStore} from "vuex-simple";
 
 @Component({
   components: {TokenDetailSection, TokenListSection},
@@ -17,12 +19,13 @@ import {Ghost} from '@/types';
 export default class Collection extends Vue {
   private ghosts: Ghost[];
   private selectedGhost: Ghost | null;
+  private store: Store = useStore(this.$store);
 
   constructor() {
     super();
-    this.ghosts = this.$store.state.myGhosts;
-    if (this.$store.state.myGhosts.length > 0) {
-      this.selectedGhost = this.$store.state.myGhosts[0];
+    this.ghosts = this.store.ghostModule.getGhosts;
+    if (this.store.ghostModule.getGhosts.length > 0) {
+      this.selectedGhost = this.store.ghostModule.getGhosts[0];
     } else {
       this.selectedGhost = null;
     }

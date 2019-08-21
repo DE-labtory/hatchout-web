@@ -8,17 +8,20 @@
     import {Component, Vue} from 'vue-property-decorator';
     import TxHistorySection from '@/components/sections/TxHistorySection.vue';
     import {Tx} from '@/types/tx';
+    import {Store} from "@/store/store";
+    import {useStore} from "vuex-simple";
 
     @Component({
         components: {TxHistorySection},
     })
     export default class TxHistory extends Vue {
-        private txList: Tx[];
+      private txList: Tx[];
+      private store: Store = useStore(this.$store);
 
-        constructor() {
-            super();
-            this.txList = this.$store.state.myTxList;
-        }
+      constructor() {
+          super();
+          this.txList = this.store.txModule.getTxList;
+      }
     }
 </script>
 
