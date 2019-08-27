@@ -1,10 +1,10 @@
-
-import {Inject, Injectable} from 'vue-typedi';
+import {Injectable} from 'vue-typedi';
 import {Getter, Mutation, State} from 'vuex-simple';
 import {User} from '@/types';
 import {UserApi} from '@/api/user/user.api';
 import {AuthApi} from '@/api/auth/auth.api';
 import {UserTranslator} from '@/api/user/user.translator';
+import {Inject} from 'typedi';
 
 
 @Injectable()

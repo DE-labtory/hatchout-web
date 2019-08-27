@@ -22,7 +22,8 @@ module.exports = {
     'jest-serializer-vue'
   ],
   testMatch: [
-    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
+    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
+    '**/src/**/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
   ],
   testURL: 'http://localhost/',
   watchPlugins: [
@@ -30,8 +31,8 @@ module.exports = {
     'jest-watch-typeahead/testname'
   ],
   globals: {
-    'ts-jest': {
-      babelConfig: true
+    "ts-jest": {
+      "diagnostics": false
     }
-  }
-}
+  },
+};
