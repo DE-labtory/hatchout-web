@@ -1,17 +1,16 @@
 
 import {User} from '@/types';
 import {AxiosResponse} from 'axios';
-import {Inject, Injectable} from 'vue-typedi';
 import {DeleteResultDto} from '@/types/deleteResultDto';
 import {AxiosSupplier} from '@/api/axios/axios.supplier';
+import {Inject, Service} from 'typedi';
 
-@Injectable()
+@Service()
 export class UserApi {
 
   private domain = 'users';
 
-  @Inject()
-  private axiosSupplier!: AxiosSupplier;
+  constructor(private axiosSupplier: AxiosSupplier) {}
 
   public async get(id: number): Promise<User> {
     const axiosInstance = this.axiosSupplier.get();

@@ -10,7 +10,10 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios-mock-adapter": "^1.17.0",
     "core-js": "^2.6.5",
+    "ts-mockito": "^2.4.2",
+    "typedi": "^0.8.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.1.0",

@@ -1,7 +1,7 @@
-import {Injectable} from 'vue-typedi';
 import axios, {AxiosInstance} from 'axios';
+import {Service} from 'typedi';
 
-@Injectable()
+@Service()
 export class AxiosSupplier {
   private axiosInstace: AxiosInstance;
   constructor() {
