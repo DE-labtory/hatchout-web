@@ -1,24 +1,21 @@
-import {Inject, Injectable} from 'vue-typedi';
+import {Service} from 'typedi';
 import {SignInDto} from '@/types';
 import {AxiosResponse} from 'axios';
 import {AxiosSupplier} from '@/api/axios/axios.supplier';
+import {AxiosContext} from '@/api/axios/axios.context';
 
-@Injectable()
+@Service()
 export class AuthApi {
   private domain = 'auth';
 
-  @Inject()
-  private axiosSupplier!: AxiosSupplier;
+  constructor(private axiosContext: AxiosContext) {}
 
   public async signIn(address: string, message: string, signature: string): Promise<SignInDto> {
-    const axiosInstance = this.axiosSupplier.get();
-    const response: AxiosResponse<SignInDto> = await axiosInstance.post<SignInDto>(`${this.domain}/signin`, {
+    return await this.axiosContext.call<SignInDto>('POST', `${this.domain}/signin`, {
       address,
       message,
       signature,
     });
-
-    return response.data;
   }
 
 }
