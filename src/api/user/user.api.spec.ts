@@ -3,6 +3,7 @@ import axios from 'axios';
 import {instance, mock, when} from 'ts-mockito';
 import {UserApi} from '@/api/user/user.api';
 import {AxiosSupplier} from '@/api/axios/axios.supplier';
+import {HttpClient} from '@/api/axios/http.client';
 
 describe('UserApi', () => {
 
@@ -10,7 +11,8 @@ describe('UserApi', () => {
   const mockAxiosSupplier = mock(AxiosSupplier);
   when(mockAxiosSupplier.get()).thenReturn(axios.create());
 
-  const userApi = new UserApi(instance(mockAxiosSupplier));
+  const httpClient = new HttpClient(instance(mockAxiosSupplier));
+  const userApi = new UserApi(httpClient);
   let responseData: object;
   const domain = 'users';
 
