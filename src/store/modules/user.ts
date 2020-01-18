@@ -5,6 +5,8 @@ import {UserApi} from '@/api/user/user.api';
 import {AuthApi} from '@/api/auth/auth.api';
 import {UserTranslator} from '@/api/user/user.translator';
 import {Inject} from 'typedi';
+import Web3 from 'web3';
+import {WalletService} from '@/api/wallet/wallet.service';
 
 
 @Injectable()
@@ -16,13 +18,16 @@ export class UserModule {
   private authApi!: AuthApi;
   @Inject()
   private userTranslator!: UserTranslator;
+  @Inject()
+  private walletService!: WalletService;
 
   @State()
   private self!: User;
 
-  public async signIn(address: string, message: string, signature: string): Promise<User> {
-    const signInDto = await this.authApi.signIn(address, message, signature);
-    return this.updateSelf(this.userTranslator.translate(signInDto));
+  public async signIn(userId: string): Promise<User | null> {
+    const signInDto = await this.authApi.signIn(userId);
+    if (signInDto) { return this.updateSelf(this.userTranslator.translate(signInDto)); }
+    return null;
   }
 
   @Getter()

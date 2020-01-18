@@ -5,3 +5,9 @@ export interface Ghost {
   readonly angelPoint: number;
   readonly level: number;
 }
+
+export interface GhostDto {
+  gene: string;
+  tokenId: number;
+  owner: string;
+}
