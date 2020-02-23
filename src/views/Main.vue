@@ -1,6 +1,7 @@
 <template>
     <div >
-        <MarketPlaceSection v-bind:ghosts="ghosts"></MarketPlaceSection>
+      <GameSection></GameSection>
+      <MarketPlaceSection v-bind:ghosts="ghosts"></MarketPlaceSection>
     </div>
     
 </template>
@@ -11,9 +12,10 @@ import MarketPlaceSection from '@/components/sections/MarketPlaceSection.vue';
 import {Ghost} from '../types';
 import {Store} from "@/store/store";
 import {useStore} from "vuex-simple";
+import GameSection from "@/components/sections/GameSection.vue";
 
 @Component({
-    components: {MarketPlaceSection},
+    components: {GameSection, MarketPlaceSection},
 })
 export default class Main extends Vue {
     private ghosts: Ghost[];

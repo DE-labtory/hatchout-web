@@ -32,7 +32,7 @@ import tokens from "@/store/tokens";
 import {UserModule} from "@/store/modules/user";
 
 @Component({
-    components: { GhostCard, GhostTable},
+    components: {GhostCard, GhostTable},
 })
 export default class MarketPlaceSection extends Vue {
   @Prop() public ghosts!: Ghost[];

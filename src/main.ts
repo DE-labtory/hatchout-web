@@ -9,6 +9,16 @@ Vue.use(VueTypedi);
 
 Vue.config.productionTip = false;
 
+// Vue.component('statichtmlpage', function (resolve, reject) {
+//   this.$http.get('', function (data, status, request) {
+//     let parser = new DOMParser();
+//     let doc: string = parser.parseFromString(data, 'text/html');
+//     resolve({
+//       template: doc
+//     })
+//   })
+// });
+
 new Vue({
   router,
   store,
