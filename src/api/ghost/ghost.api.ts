@@ -13,6 +13,10 @@ export class GhostApi {
         return await this.httpClient.call<Ghost>('GET', `${this.domain}/${id}`);
     }
 
+    public async getByPage(page: number): Promise<Ghost[]> {
+        return await this. httpClient.call<Ghost[]>('GET', `${this.domain}?page=${page}`);
+    }
+
     public async getByUser(userAddress: string): Promise<Ghost[]> {
         return await this.httpClient.call<Ghost[]>('GET', `${this.domain}/${userAddress}`);
     }

@@ -24,9 +24,15 @@ export class UserModule {
   @State()
   private self!: User;
 
-  public async signIn(userId: string): Promise<User | null> {
-    const signInDto = await this.authApi.signIn(userId);
+  public async signIn(message: string): Promise<User | null> {
+    const signInDto = await this.authApi.signIn(message);
     if (signInDto) { return this.updateSelf(this.userTranslator.translate(signInDto)); }
+    return null;
+  }
+
+  public async signUp(userName: string, message: string): Promise<User | null> {
+    const signUpDto = await this.authApi.signUp(userName, message);
+    if (signUpDto) { return this.updateSelf(this.userTranslator.translate(signUpDto)); }
     return null;
   }
 
