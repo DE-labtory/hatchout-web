@@ -80,7 +80,7 @@ export class GhostModule {
 
 
   @Action()
-  public async getGhostsByPage(page: number): Promise<void> {
+  public async loadGhostsByPage(page: number): Promise<void> {
     this.ghosts = await this.ghostApi.getByPage(page);
   }
 
