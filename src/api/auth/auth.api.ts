@@ -10,26 +10,26 @@ export class AuthApi {
 
   constructor(private httpClient: HttpClient, private walletService: WalletService) {}
 
-  public async signIn(message: string): Promise<SignDto | null> {
-    if (!this.walletService.hasWallet()) { return null; }
+  public async signIn(message: string): Promise<SignDto> {
+    if (!this.walletService.hasWallet()) { throw new Error('Wallet does not exist.'); }
 
     const address = await this.walletService.getPublicAddress();
     const signature = await this.walletService.createSignature(message);
 
-    return await this.httpClient.call<SignDto>('POST', `${this.domain}/signin`, {
+    return await this.httpClient.call<SignDto>('POST', `${this.domain}/sign-in`, {
       address,
       message,
       signature,
     });
   }
 
-  public async signUp(userName: string, message: string): Promise<SignDto | null> {
-    if (!this.walletService.hasWallet()) { return null; }
+  public async signUp(userName: string, message: string): Promise<SignDto> {
+    if (!this.walletService.hasWallet()) { throw new Error('Wallet does not exist.'); }
 
     const address = await this.walletService.getPublicAddress();
     const signature = await this.walletService.createSignature(message);
 
-    return await this.httpClient.call<SignDto>('POST', `${this.domain}/signup`, {
+    return await this.httpClient.call<SignDto>('POST', `${this.domain}/sign-up`, {
       address,
       userName,
       message,

@@ -4,7 +4,7 @@ import {instance, mock, when} from 'ts-mockito';
 import {AxiosSupplier} from '@/api/axios/axios.supplier';
 import {AuthApi} from '@/api/auth/auth.api';
 import {HttpClient} from '@/api/axios/http.client';
-import {EthereumServiceImpl} from '@/api/wallet/wallet.service.impl';
+import {WalletService} from '@/api/wallet/wallet.service';
 
 describe('AuthApi', () => {
   const mockAdapter = new MockAdapter(axios);
@@ -12,7 +12,7 @@ describe('AuthApi', () => {
   when(mockAxiosSupplier.get()).thenReturn(axios.create());
 
   const httpClient = new HttpClient(instance(mockAxiosSupplier));
-  const mockWalletService = mock(EthereumServiceImpl);
+  const mockWalletService = mock<WalletService>();
   const address = 'testAddress';
   const message = 'testMessage';
   const signature = 'testSignature';
@@ -33,12 +33,12 @@ describe('AuthApi', () => {
         level: 0,
         jwt: 'testJwt',
       };
-      mockAdapter.onPost(`/${domain}/signin`, {address, message, signature}).reply(200, responseData);
+      mockAdapter.onPost(`/${domain}/sign-in`, {address, message, signature}).reply(200, responseData);
       expect(await authApi.signIn(message)).toEqual(responseData);
     });
 
     it('should return 404 error', async () => {
-      mockAdapter.onPost(`/${domain}/signin`, {address, message, signature}).reply(404);
+      mockAdapter.onPost(`/${domain}/sign-in`, {address, message, signature}).reply(404);
 
       await expect(authApi.signIn(message))
         .rejects
@@ -46,7 +46,7 @@ describe('AuthApi', () => {
     });
 
     it('should return network error', async () => {
-      mockAdapter.onPost(`/${domain}/signin`, {address, message, signature}).networkError();
+      mockAdapter.onPost(`/${domain}/sign-in`, {address, message, signature}).networkError();
 
       await expect(authApi.signIn(message))
         .rejects
@@ -66,12 +66,12 @@ describe('AuthApi', () => {
         level: 0,
         jwt: 'testJwt',
       };
-      mockAdapter.onPost(`/${domain}/signup`, {address, userName, message, signature}).reply(200, responseData);
+      mockAdapter.onPost(`/${domain}/sign-up`, {address, userName, message, signature}).reply(200, responseData);
       expect(await authApi.signUp(userName, message)).toEqual(responseData);
     });
 
     it('should return 404 error', async () => {
-      mockAdapter.onPost(`/${domain}/signup`, {address, userName, message, signature}).reply(404);
+      mockAdapter.onPost(`/${domain}/sign-up`, {address, userName, message, signature}).reply(404);
 
       await expect(authApi.signUp(userName, message))
           .rejects
@@ -79,7 +79,7 @@ describe('AuthApi', () => {
     });
 
     it('should return network error', async () => {
-      mockAdapter.onPost(`/${domain}/signup`, {address, userName, message, signature}).networkError();
+      mockAdapter.onPost(`/${domain}/sign-up`, {address, userName, message, signature}).networkError();
 
       await expect(authApi.signUp(userName, message))
           .rejects

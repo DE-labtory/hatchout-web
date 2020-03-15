@@ -1,8 +1,8 @@
 import {Action, Getter, State} from 'vuex-simple';
 import {Ghost} from '@/types';
 import {Inject} from 'typedi';
-import {GhostApi} from '@/api/ghost/ghost.api';
 import {Injectable} from 'vue-typedi';
+import {GhostApi} from '@/api/ghost/ghost.api';
 
 @Injectable()
 export class GhostModule {

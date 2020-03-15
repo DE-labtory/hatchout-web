@@ -32,5 +32,21 @@ describe('GhostApi', () => {
 
       expect(await ghostApi.getByPage(page)).toEqual(responseData);
     });
+
+    it('should return 404 error', async () => {
+      mockAdapter.onGet(`/${domain}?page=${page}`).reply(404);
+
+      await expect(ghostApi.getByPage(page))
+          .rejects
+          .toThrow(new Error('Request failed with status code 404'));
+    });
+
+    it('should return network error', async () => {
+      mockAdapter.onGet(`/${domain}?page=${page}`).networkError();
+
+      return expect(ghostApi.getByPage(page))
+          .rejects
+          .toThrow(new Error('Network Error'));
+    });
   });
 });
