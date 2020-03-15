@@ -1,7 +1,10 @@
 export interface Ghost {
   readonly name: string;
   readonly gene: string;
-  readonly evilPoint: number;
-  readonly angelPoint: number;
+  readonly tokenId: number;
+  readonly userAddress: string;
   readonly level: number;
+  readonly angelPoint: number;
+  readonly devilPoint: number;
+  readonly createdDate: number;
 }

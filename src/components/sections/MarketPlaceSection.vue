@@ -30,6 +30,7 @@ import GhostTable from '@/components/tables/GhostTable.vue';
 import {Inject} from "vue-typedi";
 import tokens from "@/store/tokens";
 import {UserModule} from "@/store/modules/user";
+import {GhostModule} from "@/store/modules/ghost";
 
 @Component({
     components: { GhostCard, GhostTable},
@@ -39,6 +40,9 @@ export default class MarketPlaceSection extends Vue {
   public currentNum!: number;
   @Inject(tokens.USER_MODULE)
   public userModule!: UserModule;
+
+  @Inject(tokens.GHOST_MODULE)
+  public ghostModule!: GhostModule;
 
   constructor() {
     super();

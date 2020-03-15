@@ -5,7 +5,7 @@ import {UserApi} from '@/api/user/user.api';
 import {AxiosSupplier} from '@/api/axios/axios.supplier';
 import {HttpClient} from '@/api/axios/http.client';
 
-describe('UserApi', () => {
+describe('UserApi',   () => {
 
   const mockAdapter = new MockAdapter(axios);
   const mockAxiosSupplier = mock(AxiosSupplier);
