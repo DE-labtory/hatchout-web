@@ -8,3 +8,9 @@ export interface Ghost {
   readonly devilPoint: number;
   readonly createdDate: number;
 }
+
+export interface GhostDto {
+  gene: string;
+  tokenId: number;
+  owner: string;
+}
