@@ -4,11 +4,11 @@ import {Ghost} from '@/types';
 
 @Service()
 export class GhostApi {
-  private domain = 'ghosts';
+    private domain = 'ghosts';
 
-  constructor(private httpClient: HttpClient) {}
+    constructor(private httpClient: HttpClient) {}
 
-  public async getByPage(page: number): Promise<Ghost[]> {
-    return await this. httpClient.call<Ghost[]>('GET', `${this.domain}?page=${page}`);
-  }
+    public async getByPage(page: number): Promise<Ghost[]> {
+        return await this. httpClient.call<Ghost[]>('GET', `${this.domain}?page=${page}`);
+    }
 }

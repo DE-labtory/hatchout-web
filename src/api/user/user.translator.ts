@@ -1,10 +1,9 @@
-import {SignInDto, User} from '@/types';
+import {SignDto, User} from '@/types';
 import {Service} from 'typedi';
 
 @Service()
 export class UserTranslator {
-  public translate(signInDto: SignInDto): User {
-    return new User(signInDto.id, signInDto.address, signInDto.name, signInDto.point, signInDto.level, signInDto.jwt);
-
+  public translate(signDto: SignDto): User {
+    return new User(signDto.id, signDto.address, signDto.name, signDto.point, signDto.level, signDto.jwt);
   }
 }

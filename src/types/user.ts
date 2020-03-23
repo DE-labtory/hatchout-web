@@ -16,7 +16,7 @@ export class User {
   }
 }
 
-export interface SignInDto {
+export interface SignDto {
   id: number;
   address: string;
   name: string;
